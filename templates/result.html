@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Deletion Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="result-body">
+
+<div class="result-container">
+    <div class="result-card">
+        <h1>✅ Secure Deletion Completed</h1>
+
+        <div class="info">
+            <p><span>File</span> {{ filename }}</p>
+            <p><span>Deletion Level</span> {{ level }}</p>
+            <p><span>Overwrite Passes</span> {{ passes }}</p>
+        </div>
+
+        <div class="audit">
+            Audit proof saved in <b>deletion_log.txt</b>
+        </div>
+
+        <a href="/" class="back-btn">← Go Back</a>
+    </div>
+</div>
+
+</body>
+</html>

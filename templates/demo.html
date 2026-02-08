@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Secure Deletion Demo Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="card demo-card">
+
+        <!-- HEADER -->
+        <div class="demo-header">
+            <h1>🔬 Secure Deletion Demo Lab</h1>
+            <p>
+                Interactive cybersecurity simulation  
+                <br>
+                <span>(No real data is destroyed)</span>
+            </p>
+        </div>
+
+        <!-- STEP 1 -->
+        <div class="step">
+            <div class="step-title">Step 1 · Upload Sensitive File</div>
+            <input type="file" id="file">
+            <button onclick="upload()">Upload File</button>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step danger">
+            <div class="step-title">Step 2 · Normal Delete (Insecure)</div>
+            <p class="step-desc">
+                Simulates a standard delete where data is removed from directory
+                but still recoverable from disk.
+            </p>
+            <button onclick="normalDelete()">Simulate Normal Delete</button>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step warning">
+            <div class="step-title">Step 3 · Encryption</div>
+            <p class="step-desc">
+                File is encrypted to protect confidentiality before deletion.
+            </p>
+            <button onclick="encrypt()">Apply Encryption</button>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="step success">
+            <div class="step-title">Step 4 · Secure Overwrite</div>
+            <p class="step-desc">
+                Encrypted data is overwritten multiple times to prevent forensic recovery.
+            </p>
+            <button onclick="overwrite()">Run Secure Overwrite</button>
+        </div>
+
+        <!-- STEP 5 -->
+        <div class="step audit">
+            <div class="step-title">Step 5 · Audit & Proof</div>
+            <p class="step-desc">
+                Security events are logged for verification and compliance.
+            </p>
+            <button onclick="audit()">View Audit Proof</button>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="output-box">
+            <pre id="output">Demo output will appear here…</pre>
+        </div>
+
+        <!-- BACK -->
+        <div class="back-area">
+            <a href="/" class="back-btn">⬅ Back to Secure Deletion Tool</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='lab.js') }}"></script>
+</body>
+</html>

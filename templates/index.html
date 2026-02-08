@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Secure File Deletion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <div class="card main-card">
+        <h1>🔐 Secure File Deletion</h1>
+        <p class="subtitle">
+            Irreversible destruction using encryption & multi-pass overwriting
+        </p>
+
+        <div class="danger-box">
+            <h3>⚠️ Real Secure Deletion</h3>
+            <p>
+                This operation permanently destroys data.
+                Recovery using forensic tools is not possible.
+            </p>
+
+            <form action="/delete" method="post" enctype="multipart/form-data">
+                <label>Target File</label>
+                <input type="file" name="file" required>
+
+                <label>Deletion Strength</label>
+                <select name="level" required>
+                    <option value="low">Fast — 1 Pass</option>
+                    <option value="medium">Secure — 7 Passes</option>
+                    <option value="high">Military — 35 Passes</option>
+                </select>
+
+                <button class="delete-btn" type="submit">
+                    Permanently Delete
+                </button>
+            </form>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="demo-cta">
+            <p>Want to see how this works internally?</p>
+            <a href="/demo" class="demo-btn">Open Demo Mode (Safe)</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
